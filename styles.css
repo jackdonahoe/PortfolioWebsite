@@ -29,16 +29,6 @@ header {
     border-bottom: 1px solid #e5e5ea;
 }
 
-
-.profile-pic {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px auto;
-  object-fit: contain;
-}
-
 .full-stack {
   display: flex;
   flex-direction: column;
@@ -54,12 +44,15 @@ header {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 /* Header Text */
-header h1 {
+.brand {
     font-size: 24px;
-    margin: 0;
+    font-weight: bold;
+    line-height: 1.4;
 }
 
 header p {
@@ -71,10 +64,10 @@ header p {
 #about {
     margin-top: 0;
     scroll-margin-top: 80px;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Navigation */
@@ -93,13 +86,18 @@ nav a:hover {
     text-decoration: underline;
 }
 
+a:focus-visible {
+    outline: 3px solid #005bb5;
+    outline-offset: 3px;
+}
+
 /* About Section Format */
 .new-about {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 100px 300px;
-  gap: 20px;
+  padding: clamp(48px, 8vw, 100px) clamp(24px, 12vw, 200px);
+  gap: 40px;
   background-color: #f8f8f8;
   flex-wrap: wrap;
 }
@@ -121,7 +119,7 @@ nav a:hover {
 }
 
 .about-left h1 {
-  font-size: 3.5rem;
+  font-size: clamp(2.4rem, 6vw, 3.5rem);
   font-weight: 800;
   margin: 0;
   color: #1c1c1e;
@@ -129,8 +127,11 @@ nav a:hover {
 
 .about-left h2 {
   font-size: 1.2rem;
-  color: #777;
-  margin-top: 10px;
+  color: #555;
+  margin-top: 14px;
+  font-weight: 600;
+  max-width: 22ch;
+  line-height: 1.4;
 }
 
 .about-right {
@@ -146,18 +147,17 @@ nav a:hover {
   width: 100%;
   max-width: 300px;
   height: auto;
-  margin-bottom: 20px;
+  display: block;
+  margin: 0 auto 20px auto;
   object-fit: contain;
 }
 
 .about-paragraph {
-  font-size: 1.2rem;
-  line-height: 2;
+  font-size: 1.1rem;
+  line-height: 1.9;
   color: #333;
   max-width: 500px;
 }
-
-
 
 /* Section spacing */
 section {
@@ -177,7 +177,7 @@ section {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .section-container.visible {
@@ -203,18 +203,49 @@ section h2, section h3 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+.project-stack {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #005bb5;
+    letter-spacing: 0.3px;
+    margin: 4px 0 10px 0;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+}
+
 .project a {
     display: inline-block;
-    margin-top: 10px;
     color: #007aff;
     font-weight: bold;
+    text-decoration: none;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+.project a.project-link-primary {
+    background-color: #007aff;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.project a.project-link-primary:hover {
+    background-color: #005bb5;
+    text-decoration: none;
 }
 
 .project:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
 }
-
 
 /* List spacing */
 ul {
@@ -347,6 +378,8 @@ ul {
 .skill-category li i {
     margin-right: 8px;
     color: #007aff;
+    width: 1.1em;
+    text-align: center;
 }
 
 footer {
@@ -367,8 +400,21 @@ footer {
     margin: 0 auto;
 }
 
-
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+    .section-container {
+        opacity: 1;
+        transform: none;
+    }
 }

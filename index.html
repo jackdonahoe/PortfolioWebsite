@@ -4,139 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></> Jack Donahoe</title>
+    <meta name="description" content="Jack Donahoe, computer science junior at the University of West Florida. Backend projects in Python, FastAPI, and PostgreSQL. Seeking a Summer 2027 software engineering internship.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+ 
 </head>
 <body>
-
+ 
 <header>
     <div class="header-container">
-        <h1>Jack Donahoe</h1>
+        <span class="brand">Jack Donahoe</span>
         <nav>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </nav>
     </div>
-
-
 </header>
-
+ 
 <section id="about" class="about-split new-about">
     <div class="about-left">
         <p class="intro-text">Hi, my name is</p>
         <h1>Jack Donahoe</h1>
-        <h2>Computer Science Student & Developer</h2>
+        <h2>Computer science junior at UWF. Looking for a Summer 2027 software engineering internship.</h2>
     </div>
-
+ 
     <div class="about-right">
         <img src="avatar.png" alt="Illustrated portrait of Jack Donahoe" class="profile-pic">
         <p class="about-paragraph">
             Based in <strong>Pensacola, Florida</strong>.<br>
-            I'm a Computer Science student at the <strong>University of West Florida</strong>.<br>
-            I'm interested in <strong>AI, Data Science,</strong> and <strong>Software Engineering</strong>.
+            Studying computer science at the <strong>University of West Florida</strong>, graduating <strong>May 2028</strong>.<br>
+            I co-founded the <strong>UWF Brazilian Jiu-Jitsu Club</strong> and grew it to 30+ members, then built the software it runs on.<br>
+            I work mostly on <strong>backends and data</strong>: Python, FastAPI, PostgreSQL.
         </p>
     </div>
 </section>
-
+ 
 <section id="projects">
     <div class="section-container">
         <h2>Projects</h2>
-
+ 
         <div class="project">
-            <h3>Fantasy Football Manager</h3>
+            <h3>BJJ Check-In System</h3>
+            <p class="project-stack">Python · FastAPI · PostgreSQL · Jinja2 · Railway</p>
             <p>
-                A Java console-based fantasy football application built in Java using object oriented programming to manage players, teams, and scoring.
+                QR-based attendance system for the UWF Brazilian Jiu-Jitsu Club, a 30+ member organization. Replaced a paper sign-in sheet and is used at the door every session.
             </p>
             <ul>
-                <li>Created classes for players and teams and implemented fantasy scoring logic.</li>
-                <li>Built menu navigation and data structures for roster management.</li>
-                <li>Added automated stat calculations for weekly matchups.</li>
+                <li>Members check in from a phone at the door. Admins get a dashboard instead of a spreadsheet.</li>
+                <li>Retention view tracks where members came from and flags anyone inactive for 21+ days.</li>
+                <li>Postgres upserts and unique constraints prevent duplicate records when several people check in at once.</li>
+                <li>Raw SQL over psycopg3, no ORM. Deployed on Railway with bcrypt-hashed admin auth and signed session cookies.</li>
             </ul>
-            <a href="https://github.com/Pianojedi/FantasyFootballTracker" target="_blank">View on GitHub</a>
+            <div class="project-links">
+                <a class="project-link-primary" href="[LIVE_DEMO_URL]" target="_blank" rel="noopener">View live demo</a>
+                <a href="https://github.com/jackdonahoe/bjjtracker" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
         </div>
-
+ 
         <div class="project">
             <h3>Patient Management System</h3>
+            <p class="project-stack">C++ · STL</p>
             <p>
-                A C++ console application to store, search, update, and validate patient records using classes and vectors.
+                Command-line application to store, search, update, and validate patient records.
             </p>
             <ul>
-                <li>Implemented record creation, lookup, and updates with input validation.</li>
-                <li>Used classes and vectors to organize patient data and operations.</li>
-                <li>Focused on error handling and reliable record modification behavior.</li>
+                <li>Record creation, lookup, and updates with input validation on every field.</li>
+                <li>Classes and vectors to organize patient data and the operations on it.</li>
+                <li>Error handling built so a bad input never corrupts an existing record.</li>
             </ul>
-            <a href="https://github.com/Pianojedi/PatientManagementSystem" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project">
-            <h3>Banking Application</h3>
-            <p>
-                A Java console application that simulates basic banking operations while demonstrating inheritance, encapsulation, and modular design.
-            </p>
-            <ul>
-                <li>Managed checking and savings accounts with deposits and withdrawals.</li>
-                <li>Implemented interest calculation for savings accounts.</li>
-                <li>Displayed balances and transaction history through a console interface.</li>
-            </ul>
-            <a href="https://github.com/Pianojedi/BankingApp" target="_blank">View on GitHub</a>
+            <div class="project-links">
+                <a href="https://github.com/jackdonahoe/PatientManagementSystem" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
         </div>
     </div>
 </section>
-
+ 
 <section id="skills">
     <div class="section-container">
         <h2>Skills</h2>
-
+ 
         <div class="skills-grid">
-
+ 
             <div class="skill-category">
-                <h3>Programming Languages</h3>
+                <h3>Languages</h3>
                 <ul>
+                    <li><i class="fab fa-python"></i> Python</li>
                     <li><i class="fas fa-mug-hot"></i> Java</li>
                     <li><i class="fas fa-code"></i> C++</li>
-                    <li><i class="fab fa-html5"></i> HTML & CSS</li>
+                    <li><i class="fas fa-table"></i> SQL</li>
                 </ul>
             </div>
-
+ 
             <div class="skill-category">
-                <h3>Tools & Platforms</h3>
+                <h3>Backend &amp; Data</h3>
                 <ul>
-                    <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+                    <li><i class="fas fa-bolt"></i> FastAPI</li>
+                    <li><i class="fas fa-database"></i> PostgreSQL</li>
+                    <li><i class="fas fa-file-code"></i> Jinja2</li>
+                </ul>
+            </div>
+ 
+            <div class="skill-category">
+                <h3>Tools &amp; Platforms</h3>
+                <ul>
+                    <li><i class="fab fa-git-alt"></i> Git &amp; GitHub</li>
+                    <li><i class="fas fa-train"></i> Railway</li>
                     <li><i class="fas fa-terminal"></i> Linux</li>
                     <li><i class="fas fa-laptop-code"></i> VS Code</li>
                 </ul>
             </div>
-
-            <div class="skill-category">
-                <h3>Technical Concepts</h3>
-                <ul>
-                    <li><i class="fas fa-cubes"></i> OOP</li>
-                    <li><i class="fas fa-database"></i> Data Structures</li>
-                    <li><i class="fas fa-bug"></i> Debugging</li>
-                </ul>
-            </div>
-
+ 
         </div>
     </div>
 </section>
-
+ 
 <section id="contact">
     <div class="section-container contact-layout">
         <div class="contact-left">
             <h2>Contact Me</h2>
             <div class="contact-links">
-                <a href="mailto:jdonahoe06@gmail.com" target="_blank">
+                <a href="mailto:jdonahoe06@gmail.com">
                     <i class="fas fa-envelope"></i> Email Me
                 </a>
-                <a href="https://github.com/Pianojedi" target="_blank">
+                <a href="https://github.com/jackdonahoe" target="_blank" rel="noopener">
                     <i class="fab fa-github"></i> GitHub
                 </a>
-                <a href="https://www.linkedin.com/in/johnathan-donahoe-830a5235b/" target="_blank">
+                <a href="https://www.linkedin.com/in/johnathan-donahoe-830a5235b/" target="_blank" rel="noopener">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://app.joinhandshake.com/profiles/ahrnxz" target="_blank">
+                <a href="https://app.joinhandshake.com/profiles/ahrnxz" target="_blank" rel="noopener">
                     <i class="fas fa-handshake"></i> Handshake
                 </a>
                 <a href="resume.pdf" download>
@@ -144,29 +142,25 @@
                 </a>
             </div>
         </div>
-
+ 
         <div class="contact-right">
             <ul>
                 <li><i class="fas fa-envelope"></i> jdonahoe06@gmail.com</li>
-                <li><i class="fas fa-phone"></i> (850) 619-5456</li>
                 <li><i class="fas fa-map-marker-alt"></i> Pensacola, FL</li>
-                <li><i class="fas fa-clock"></i> Available 24/7</li>
+                <li><i class="fas fa-plane"></i> Open to relocating for Summer 2027</li>
             </ul>
         </div>
     </div>
 </section>
-
-
-
+ 
 <footer>
     <div class="footer-container">
         <p>jdonahoe06@gmail.com</p>
-        <p>&copy; 2025 Jack Donahoe</p>
+        <p>&copy; 2026 Jack Donahoe</p>
     </div>
 </footer>
-
-
+ 
 <script src="script.js"></script>
 </body>
-
+ 
 </html>
